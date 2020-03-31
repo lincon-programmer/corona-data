@@ -1,0 +1,26 @@
+{
+  "name": "corona-data",
+  "version": "0.0.1",
+  "description": "api de disponibilização de dados do corona virus",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Lincon_programmer/corona-data.git"
+  },
+  "author": "lincon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Lincon_programmer/corona-data/issues"
+  },
+  "homepage": "https://gitlab.com/Lincon_programmer/corona-data#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.6"
+  }
+}
