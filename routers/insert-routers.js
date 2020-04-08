@@ -5,4 +5,5 @@ module.exports = (app) =>{
     const insertRouters = InsertData.routers();
 
     app.post(insertRouters.brasil, insertdata.brasil());
+    app.post(insertRouters.sp, insertdata.sp());
 }

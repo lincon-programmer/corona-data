@@ -14,6 +14,22 @@ var municipiosSchema = mongoose.Schema({
     }
 });
 
-var spMunicipios = mongoose.model('SP', municipiosSchema);
+var saoPauloSchema = mongoose.Schema({
+    data:{
+        type: String
+    },
+    estado:{
+        type: String
+    },
+    casos:{
+        type: Number
+    },
+    obitos:{
+        type: Number
+    },
+    casos_por_municipio:[municipiosSchema]
+})
+
+var spMunicipios = mongoose.model('SP', saoPauloSchema);
 
 module.exports = spMunicipios;

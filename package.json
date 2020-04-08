@@ -1,6 +1,6 @@
 {
   "name": "corona-data",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "api de disponibilização de dados do corona virus",
   "main": "main.js",
   "scripts": {

@@ -4,7 +4,7 @@ const   swaggerUi = require("swagger-ui-express"),
 const swaggerDefinition = {
     info: {
         title: 'API Corona Data',
-        version: '0.0.5',
+        version: '1.0.0',
         description: 'Api de status do coronavírus no Brasil',
         contact:{
             name: 'Lincon Venicios',
@@ -20,6 +20,7 @@ const swaggerDefinition = {
     produces: 'application/json',
     tags: {
             name: 'Brasil',
+            name: 'SP'
     }
 }
 
