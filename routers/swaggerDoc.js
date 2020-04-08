@@ -20,7 +20,8 @@ const swaggerDefinition = {
     produces: 'application/json',
     tags: {
             name: 'Brasil',
-            name: 'SP'
+            name: 'SP',
+            name: 'AL'
     }
 }
 
