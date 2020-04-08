@@ -1,7 +1,9 @@
-const   baseRotas = require("./base-router"),
-        dataRouter= require("./data-router")
+const   baseRotas       = require("./base-router"),
+        listRouters     = require("./list-routers"),
+        insertRouters   = require("./insert-routers")
 
 module.exports = (app) =>{
     baseRotas(app);
-    dataRouter(app);
+    listRouters(app);
+    insertRouters(app);
 }
