@@ -1,13 +1,15 @@
 const brasil = require("../modules/brasil-model");
 const spMunicipios = require("../modules/sp-municipios-model");
 const alMunicipios = require("../modules/al-municipios-model");
+const piMunicipios = require("../modules/pi-municipios-model");
 
 class Listdata{
     static routers(){
         return{
             brasil: "/BR/:data",
             sp:"/SP/:data",
-            al:"/AL/:data"
+            al:"/AL/:data",
+            pi:"/PI/:data"
         };
     }
 
@@ -35,6 +37,14 @@ class Listdata{
             alMunicipios.find({data:data})
                 .then(ret=> resp.json(ret))
                 .catch(err=> resp.status(400).json({erro: err.message}))
+        }
+    }
+    pi(){
+        return function(req, resp, next){
+            let data = req.params.data;
+            piMunicipios.find({data:data})
+                .then(ret=> resp.json(ret))
+                .catch(err=> resp.status(400).json({err: err.message}));
         }
     }
 }

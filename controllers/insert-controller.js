@@ -1,13 +1,15 @@
 const brasil = require("../modules/brasil-model");
 const spMunicipios = require("../modules/sp-municipios-model");
 const alMunicipios = require("../modules/al-municipios-model");
+const piMunicipios = require("../modules/pi-municipios-model");
 
 class InsertData{
     static routers(){
         return{
             brasil: "/insertBR",
             sp: "/insertSP",
-            al: "/insertAL"
+            al: "/insertAL",
+            pi: "/insertPI"
         }
     }
 
@@ -37,6 +39,7 @@ class InsertData{
                 .catch(err=> resp.status(400).json({erro: err.message}))
         }
     }
+    
     al(){
         return function(req, resp, next){
             let document = new alMunicipios(req.body);
@@ -45,8 +48,20 @@ class InsertData{
                     resp.json(ret);
                     console.log("Dados Alagoas inserido com sucesso!");
                 })
-                .catch(err=> resp.status(400).json({erro: err.message}))
+                .catch(err=> resp.status(400).json({erro: err.message}));
         }
+    }
+
+    pi(){
+       return function(req, resp, next){
+            let document = new piMunicipios(req.body);
+            document.save()
+                .then(ret=>{
+                    resp.json(ret);
+                    console.log("Dados Piaui inseridos com sucesso");
+                })
+                .catch(err=> resp.status(400).json({erro: err.message}));
+       } 
     }
 }
 
