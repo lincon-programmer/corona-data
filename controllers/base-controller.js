@@ -10,7 +10,7 @@ class Basecontrolador{
             resp.json({
                 app: "corona-data",
                 description: "Api de informação do coronavírus no Brasil",
-                version: "1.0.o"
+                version: "1.0.0"
             })
         };
     }
