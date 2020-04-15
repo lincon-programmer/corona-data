@@ -2,6 +2,7 @@ const brasil = require("../modules/brasil-model");
 const spMunicipios = require("../modules/sp-municipios-model");
 const alMunicipios = require("../modules/al-municipios-model");
 const piMunicipios = require("../modules/pi-municipios-model");
+const rsMunicipios = require("../modules/rs-municipios-model");
 
 class InsertData{
     static routers(){
@@ -9,7 +10,8 @@ class InsertData{
             brasil: "/insertBR",
             sp: "/insertSP",
             al: "/insertAL",
-            pi: "/insertPI"
+            pi: "/insertPI",
+            rs: "/insertRS"
         }
     }
 
@@ -63,6 +65,17 @@ class InsertData{
                 .catch(err=> resp.status(400).json({erro: err.message}));
        } 
     }
+    rs(){
+        return function(req, resp, next){
+             let document = new rsMunicipios(req.body);
+             document.save()
+                 .then(ret=>{
+                     resp.json(ret);
+                     console.log("Dados Rio Grande Do Sul inseridos com sucesso");
+                 })
+                 .catch(err=> resp.status(400).json({erro: err.message}));
+        } 
+     }
 }
 
 module.exports = InsertData;

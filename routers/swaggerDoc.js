@@ -22,7 +22,8 @@ const swaggerDefinition = {
             name: 'Brasil',
             name: 'SP',
             name: 'AL',
-            name: 'PI'
+            name: 'PI',
+            name: 'RS'
     }
 }
 

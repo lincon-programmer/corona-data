@@ -8,4 +8,5 @@ module.exports = (app) =>{
     app.post(insertRouters.sp, insertdata.sp());
     app.post(insertRouters.al, insertdata.al());
     app.post(insertRouters.pi, insertdata.pi());
+    app.post(insertRouters.rs, insertdata.rs());
 }

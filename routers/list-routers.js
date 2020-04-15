@@ -181,4 +181,47 @@ module.exports = (app) =>{
      *                                  example: 0
     */
     app.get(listRouters.pi, listdata.pi());
+    /**
+     * @swagger
+     * /RS/{data}:
+     *    get:
+     *      tags:
+     *          - RS
+     *      parameters:
+     *          - in: path
+     *            name: data
+     *            type: string
+     *      summary: Rota com os dados de infectados do estado do Rio Grande Do Sul
+     *      description: listagem de dados contendo Os municipios do Rio Grande Do Sul que foram infectados pelo coronavírus, essa lista é atulizada todos os dias ás 19h00, O formato de data que deve ser inserido é DD-MM-AAAA.
+     *      responses:
+     *          200:
+     *              schema:
+     *                  type: object
+     *                  properties:
+     *                      data:
+     *                          type: string
+     *                          example: 07-04-2020
+     *                      estado:
+     *                          type: string
+     *                          example: São Paulo
+     *                      casos:
+     *                          type: number
+     *                          example: 13717
+     *                      obitos:
+     *                          type: number
+     *                          example: 667
+     *                      casos_por_municipio:
+     *                          type: object
+     *                          properties:
+     *                              Municipio:
+     *                                  type: string
+     *                                  example: águas de Lindóia
+     *                              Total_De_Casos:
+     *                                  type: number
+     *                                  example: 1
+     *                              Total_De_Obitos:
+     *                                  type: number
+     *                                  example: 0
+    */
+    app.get(listRouters.rs, listdata.rs());
 }
